@@ -15,4 +15,6 @@ jobs:
           # docker run -d --mount type=bind,source=${{ github.workspace }}/sampleAPI.json,target=/sampleAPI,readonly -p 3000:3000 mockoon/cli:latest -d sampleAPI -i 0 -p 3000
       - name: Check mock
         run: |
+          ps -ef
+          netstate
           curl -vl http://127.0.0.1:3000/users
