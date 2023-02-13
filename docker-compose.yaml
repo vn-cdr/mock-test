@@ -6,7 +6,11 @@ services:
     container_name: myapi
     ports:
       - "3000:3000"
+    networks:
+      demo:
     volumes:
       - type: bind
         source: ./data.json
         target: /data 
+networks:
+      demo:
