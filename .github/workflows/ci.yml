@@ -16,4 +16,4 @@ jobs:
       - name: Check mock
         run: |
           netstat -atn
-          curl -vl http://0.0.0.0:3000/users
+          curl http://localhost:3000/users
