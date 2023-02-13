@@ -11,7 +11,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Check mock Runner
         run: |
-          docker run -d --mount type=bind,source=${{ github.workspace }}/sampleAPI.json,target=/sampleAPI,readonly -p 3000:3000 mockoon/cli:latest -d sampleAPI -i 0 -p 3000
+          # docker-compose up -d
+          # docker run -d --mount type=bind,source=${{ github.workspace }}/sampleAPI.json,target=/sampleAPI,readonly -p 3000:3000 mockoon/cli:latest -d sampleAPI -i 0 -p 3000
       - name: Check mock Runner
         run: |
           curl http://localhost:3000/users
