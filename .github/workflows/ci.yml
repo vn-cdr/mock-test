@@ -16,5 +16,4 @@ jobs:
       - name: Check mock
         run: |
           ps -ef
-          netstate
           curl -vl http://127.0.0.1:3000/users
