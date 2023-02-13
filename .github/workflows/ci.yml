@@ -9,10 +9,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Check mock Runner
+      - name: build mock Runner
         run: |
           docker-compose up -d
           # docker run -d --mount type=bind,source=${{ github.workspace }}/sampleAPI.json,target=/sampleAPI,readonly -p 3000:3000 mockoon/cli:latest -d sampleAPI -i 0 -p 3000
-      - name: Check mock Runner
+      - name: Check mock
         run: |
-          curl -v http://127.0.0.1:3000/users
+          curl -vl http://127.0.0.1:3000/users
