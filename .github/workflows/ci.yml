@@ -21,12 +21,29 @@ jobs:
 #          curl -i http://127.0.0.1:3000/users
 #          docker-compose -f docker-compose-mockoon.yml down
 
-      - name: build mockserver Runner
-        run: |
-          docker-compose -f docker-compose-mockserver.yml up -d
-      - name: Check mockserver
-        run: |
-          sleep 10
-          docker ps
-          curl -i http://127.0.0.1:1080/users
-          docker-compose -f docker-compose-mockserver.yml down
+#      - name: build mockserver Runner
+#        run: |
+#          docker-compose -f docker-compose-mockserver.yml up -d
+#      - name: Check mockserver
+#        run: |
+#          sleep 10
+#          docker ps
+#          curl -i http://127.0.0.1:1080/users
+#          docker-compose -f docker-compose-mockserver.yml down
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      - name: Setup Wiremock
+        uses: williamhaw/setup-wiremock-action@v0.1.3
+        id: setup-wiremock
+        with:
+          http-port: '8080'
+          mappings: 'example-mapping-directory'
+          files: 'example-files-directory'
+          command: 'node example.test.js'
+          verbose: false
+      - name: Get the WireMock standard output
+        run: echo "${{ steps.setup-wiremock.outputs.wiremock-stdout }}"
