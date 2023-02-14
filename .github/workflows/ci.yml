@@ -16,7 +16,7 @@ jobs:
           # docker run -d --mount type=bind,source=${{ github.workspace }}/sampleAPI.json,target=/sampleAPI,readonly -p 3000:3000 mockoon/cli:latest -d sampleAPI -i 0 -p 3000
       - name: Check mockoon
         run: |
-          sleep 5
+          sleep 10
           docker ps
           curl -i http://127.0.0.1:3000/users
           docker-compose down
@@ -26,7 +26,7 @@ jobs:
           docker-compose -f docker-compose-mockserver.yml up -d
       - name: Check mockserver
         run: |
-          sleep 5
+          sleep 10
           docker ps
           curl -i http://127.0.0.1:1080/users
           docker-compose down
