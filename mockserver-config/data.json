@@ -1,0 +1,18 @@
+[
+  {
+    "httpRequest": {
+      "path": "/users"
+    },
+    "httpResponse": {
+      "body": "some response users"
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/blog"
+    },
+    "httpResponse": {
+      "body": "some response blog"
+    }
+  }
+]
