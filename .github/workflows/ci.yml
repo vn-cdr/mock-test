@@ -41,8 +41,8 @@ jobs:
         id: setup-wiremock
         with:
           http-port: '8080'
-          mappings: 'example-mapping-directory'
-          files: 'example-files-directory'
+          mappings: 'wiremock-mapping'
+          files: 'wiremock-responce'
           command: 'node example.test.js'
           verbose: false
       - name: Get the WireMock standard output
