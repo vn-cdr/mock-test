@@ -10,5 +10,5 @@ services:
       MOCKSERVER_INITIALIZATION_JSON_PATH: /config/data.json
     volumes:
       - type: bind
-        source: mockserver-config
+        source: ./mockserver-config
         target: /config
