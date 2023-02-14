@@ -3,7 +3,7 @@ services:
   mockoon:
     image: mockoon/cli:latest
     command: mockoon-cli start --data data
-    container_name: myapi
+    container_name: mockoon-api
     ports:
       - "3000:3000"
     volumes:

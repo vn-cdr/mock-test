@@ -2,6 +2,7 @@ version: "2.4"
 services:
   mockServer:
     image: mockserver/mockserver:5.14.0
+    container_name: mockserver-api
     ports:
       - 1080:1080
     environment:
