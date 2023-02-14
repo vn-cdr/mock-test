@@ -19,7 +19,7 @@ jobs:
           sleep 10
           docker ps
           curl -i http://127.0.0.1:3000/users
-          docker-compose down
+          docker-compose -f docker-compose-mockoon.yml down
 
       - name: build mockserver Runner
         run: |
@@ -29,4 +29,4 @@ jobs:
           sleep 10
           docker ps
           curl -i http://127.0.0.1:1080/users
-          docker-compose down
+          docker-compose -f docker-compose-mockserver.yml down
